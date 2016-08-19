@@ -3,13 +3,17 @@
         <title>Fabiola's blog</title>
     </head>
     <body>
-	<h1>Blog</h1>
-	<em>texto enfatizado</em>
-	<strong>texto fortemente enfatizado</br> Pulou uma linha</strong>
-	<a href="https://djangogirls.org">link</a>
-        <p>Hi there!</p>
-        <p>It works!</p>
-	<ul><li>primeiro item</li><li>segundo item</li></ul>
+	<div>
+   		 <h1><a href="/">Django Girls Blog</a></h1>
+	</div>
+
+	{% for post in posts %}
+   		 <div>
+       			 <p>published: {{ post.published_date }}</p>
+      			  <h1><a href="">{{ post.title }}</a></h1>
+       			 <p>{{ post.text|linebreaksbr }}</p>
+   		 </div>
+	{% endfor %}
 	<div>
 		<h1>Pokemons</h1>
 	</div>
